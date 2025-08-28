@@ -51,7 +51,7 @@ void Solver::solve()
 	double mult = alpha * dt / (dx*dx);
 
 	// iteration ove time
-#pragma omp parallel for collapse(2)
+#pragma omp parallel for
 	for (size_t i = 1; i < m_array.rows(); ++i)
 	{
 		// iteration over space
