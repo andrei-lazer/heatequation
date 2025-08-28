@@ -1,5 +1,5 @@
+# Heat Equation Solver in C++
 
-## To Do
-- https://www.youtube.com/watch?v=29mF-kqNWpE is a good video on this
-- Check out attributes in C++
-- Profile this to see if it actually makes a difference (google profile?)
+This is a heat equation solver in C++, with a Python frontend for presentation
+and exploration purposes. See the streamlit app (add link) for the demo and an
+explanation.
