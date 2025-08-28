@@ -51,10 +51,10 @@ void Solver::solve()
 	double mult = alpha * dt / (dx*dx);
 
 	// iteration ove time
-#pragma omp parallel for
 	for (size_t i = 1; i < m_array.rows(); ++i)
 	{
 		// iteration over space
+#pragma omp parallel for num_threads(4)
 		for (size_t j = 1; j < m_array.cols() - 1; ++j)
 		{
 			double adding = mult * (m_array(i-1,j+1) - 2.0*m_array(i-1,j) +m_array(i-1,j-1));
