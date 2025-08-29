@@ -7,9 +7,11 @@ Check it out at <a href="https://heatequation.streamlit.app" target="_blank">htt
 
 ## 🚀 Features
 - **Numerical Solution**: Solves the 1D heat equation, 
+
     $$
         \frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2},
     $$
+
 using the FTCS method to model heat distribution over time, where $u$ is 
 temperature, $t$ is time, $x$ is position, and $\alpha$ is thermal diffusivity.
 - **C++ Backend**: Uses a custom 2-D grid template and OpenMP for parallel processing to quickly
