@@ -7,7 +7,8 @@ from common import *
 from create_plot import create_plot
 
 with st.sidebar:
-    st.title(page_icon + " " + page_title)
+
+    st.markdown("---")
     n_xsteps = st.number_input(
         "Number of nodes in the $x$ direction",
         min_value=2,

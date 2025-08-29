@@ -9,5 +9,4 @@ st.title(title)
 
 with open("explanation.md", "r") as f:
     lines = f.read()
-    print(lines)
     st.markdown(lines)
