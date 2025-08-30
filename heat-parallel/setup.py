@@ -23,7 +23,7 @@ ext_modules = [
         define_macros=[("VERSION_INFO", __version__)],
         extra_compile_args=["-fopenmp"],
         extra_link_args=["-fopenmp", "-lgomp"],  # Add -lgomp for OpenMP
-        cxx_std=17
+        cxx_std=23
     ),
 ]
 
