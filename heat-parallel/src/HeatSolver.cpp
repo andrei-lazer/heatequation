@@ -42,7 +42,7 @@ void Solver::set_initial_condition(const std::function<double(double)>& init_fun
 	for (size_t j = 0; j < m_array.cols(); ++j)
 	{
 		double new_val = init_func(j*dx);
-		m_array[0,j] = new_val;
+		m_array(0,j) = new_val;
 	}
 }
 
@@ -57,11 +57,11 @@ void Solver::solve()
 #pragma omp parallel for num_threads(4)
 		for (size_t j = 1; j < m_array.cols() - 1; ++j)
 		{
-			double adding = mult * (m_array[i-1,j+1] - 2.0*m_array[i-1,j] +m_array[i-1,j-1]);
-			m_array[i,j] =m_array[i-1,j] + adding;
+			double adding = mult * (m_array(i-1,j+1) - 2.0*m_array(i-1,j) +m_array(i-1,j-1));
+			m_array(i,j) =m_array(i-1,j) + adding;
 		}
-		m_array[i,0] = m_array[i-1,0];
-		m_array[i,m_array.cols()-1] = m_array[i-1,m_array.cols()-1];
+		m_array(i,0) = m_array(i-1,0);
+		m_array(i,m_array.cols()-1) = m_array(i-1,m_array.cols()-1);
 	curr_t += dt;
 	}
 }
